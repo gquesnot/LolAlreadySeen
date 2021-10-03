@@ -125,9 +125,12 @@ def findSummonnerInActiveMatch(founds):
         match = lol_watcher.spectator.by_summoner(myRegion, me['id'])
         print("GAME STARTED")
         for participant in match['participants']:
-            if participant['summonerName'] in founds.keys() and participant['summonerName'] not in friends:
-                print(participant['found'], participant['summonerName'], ":")
-                for match in participant['matches']:
+
+            #print(participant['summonerName'],  participant['summonerName'] in founds.keys())
+            if participant['summonerName'] in founds.keys():
+                found = founds[participant['summonerName']]
+                print(found['found'], participant['summonerName'], ":")
+                for match in found['matches']:
                     print('   ', printMatch(match))
 
     except:
