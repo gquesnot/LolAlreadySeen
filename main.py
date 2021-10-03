@@ -74,15 +74,7 @@ def updateHistory():
     print("done update request", len(result.keys()), " last match")
     return result
 
-
-def foundMe(participants):
-    for participant in participants:
-        if participant['name'] == summonerName:
-            return participant
-    return None
-
-
-def getRecentSummonnerView(matchHistory):
+def convertMatchHistoryToSummonerNameDictWithMatch(matchHistory):
     res = dict()
     idx = 0
     for id_, match in matchHistory.items():
@@ -147,7 +139,7 @@ if __name__ == '__main__':
     if confOk:
         matchHistory = updateHistory()
 
-        founds = getRecentSummonnerView(matchHistory)
+        founds = convertMatchHistoryToSummonerNameDictWithMatch(matchHistory)
 
         findSummonnerInActiveMatch(founds)
         input("Press Enter to continue...")
