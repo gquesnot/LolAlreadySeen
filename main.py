@@ -15,6 +15,7 @@ try:
         me = lol_watcher.summoner.by_name(myRegion, summonerName)
         confOk = True
 except:
+    input("Bad Config, Press Enter to continue...")
     confOk = False
 
 
@@ -71,7 +72,7 @@ def updateHistory():
     with open(f"json/{summonerName}_matchHistory.json", "w+") as f:
         json.dump(result, f, indent=4)
     print("done update request", len(result.keys()), " last match")
-    return res
+    return result
 
 
 def foundMe(participants):
