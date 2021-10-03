@@ -1,0 +1,9 @@
+{
+  "apiKey": "your_RIOT_Api_Key",
+  "summonerName": "your_Summoner_Name",
+  "myRegion": "euw1",
+  "region": "EUROPE",
+  "friends": [
+    "Random Iron"
+  ]
+}
