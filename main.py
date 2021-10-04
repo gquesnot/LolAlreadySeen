@@ -11,9 +11,14 @@ try:
         region = config['region']
         summonerName = config['summonerName']
         friends = config['friends']
-        lol_watcher = LolWatcher(apiKey, default_match_v5=True)
-        me = lol_watcher.summoner.by_name(myRegion, summonerName)
-        confOk = True
+        try:
+            lol_watcher = LolWatcher(apiKey, default_match_v5=True)
+            me = lol_watcher.summoner.by_name(myRegion, summonerName)
+            confOk = True
+        except:
+            input('Bad ApiKey, Press Enter to continue..')
+            confOk = False
+
 except:
     input("Bad Config, Press Enter to continue...")
     confOk = False
